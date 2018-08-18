@@ -19,3 +19,8 @@ Ejemplo:
 En caso de quere ver los nombres utilice
 
 ./c1 -v CN NU
+
+
+#IMPORTANTE
+
+El archivo Lineas.csv debe estar en la carpeta donde se encuentra el archivo .cpp y el ejecutable
