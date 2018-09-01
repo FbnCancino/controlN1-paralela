@@ -191,12 +191,8 @@ int main(int argc, char* argv[])
 {
 	vector <Estacion> metro;
 	string argumento=argv[1];
-	string Minicial=argv[2];
-	string Mdestino=argv[3];
 	int in,fin;
 
-	if(argc==4)
-	{
 		if(argumento=="-v")
 		{
 			cout<<"Victor Gomez Espinosa"<<endl;
@@ -206,7 +202,8 @@ int main(int argc, char* argv[])
 		else
 		{
 			if(argumento=="-f")
-			{
+			{	string Minicial=argv[2];
+			 	string Mdestino=argv[3];
 				Llenado(metro);
 				if(BusquedaEstaciones(metro,Minicial,Mdestino,&in,&fin)==2)
 				{	
@@ -287,9 +284,5 @@ int main(int argc, char* argv[])
 				cout<<"Entrada no correspondiente"<<endl;
 			}
 		}
-	}
-	else
-	{
-		cout<<"Los datos ingresados son erroneos"<<endl;
-	}
+
 }
