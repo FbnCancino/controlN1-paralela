@@ -114,7 +114,7 @@ void BusquedaSigEst(vector <Estacion> &metro, int *cont, string &cam, int inic, 
 		while(metro[movimiento1].id!=0 && aux1==0)
 		{
 			contador1++;
-			recorrido1=recorrido1+"->"+metro[movimiento1].nombre;
+			recorrido1=recorrido1+"- "+metro[movimiento1].nombre;
 			if(movimiento1==des)
 			{
 				aux1=1;
@@ -151,7 +151,7 @@ void BusquedaSigEst(vector <Estacion> &metro, int *cont, string &cam, int inic, 
 		while(metro[movimiento2].id!=0 && aux2==0)
 		{
 			contador2++;
-			recorrido2=recorrido2+"->"+metro[movimiento2].nombre;
+			recorrido2=recorrido2+"- "+metro[movimiento2].nombre;
 			if(movimiento2==des)
 			{
 				posibles.push_back(recorrido2);
@@ -191,12 +191,7 @@ int main(int argc, char* argv[])
 {
 	vector <Estacion> metro;
 	string argumento=argv[1];
-	string Minicial=argv[2];
-	string Mdestino=argv[3];
 	int in,fin;
-
-	if(argc==4)
-	{
 		if(argumento=="-v")
 		{
 			cout<<"Victor Gomez Espinosa"<<endl;
@@ -206,7 +201,8 @@ int main(int argc, char* argv[])
 		else
 		{
 			if(argumento=="-f")
-			{
+			{	string Minicial=argv[2];
+				string Mdestino=argv[3];
 				Llenado(metro);
 				if(BusquedaEstaciones(metro,Minicial,Mdestino,&in,&fin)==2)
 				{	
@@ -287,9 +283,4 @@ int main(int argc, char* argv[])
 				cout<<"Entrada no correspondiente"<<endl;
 			}
 		}
-	}
-	else
-	{
-		cout<<"Los datos ingresados son erroneos"<<endl;
-	}
 }
